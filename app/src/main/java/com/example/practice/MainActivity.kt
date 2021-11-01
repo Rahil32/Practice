@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         increment = findViewById(R.id.textView) //get - xml + instance
 
-    mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)  //mainViewModel object
+    mainViewModel = ViewModelProvider(this,MainViewModelFactory(10)).get(MainViewModel::class.java)  //mainViewModel object
 
         set()   //set + create
 
