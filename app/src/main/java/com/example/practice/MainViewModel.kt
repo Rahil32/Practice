@@ -1,16 +1,14 @@
 package com.example.practice    //MainActivity -> MainViewModelFactory -> MainViewModel -> MainActivity
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MainViewModel(val num: Int) : ViewModel() {   //num assigned in value
-    var value: Int = num
-
-    fun increment(){
-        value++
+class MainViewModel : ViewModel() {
+    private val text = MutableLiveData<String>("Sumanta")
+    val set : LiveData<String>
+    get() = text
+    fun update(){
+        text.value = "mm mm"
     }
-
-    fun reset(){
-        value = 0
-    }
-
 }
